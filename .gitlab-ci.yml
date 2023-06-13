@@ -1,0 +1,13 @@
+include:
+  - remote: 'https://gitlab.com/yesolutions/gitlab-ci-templates/raw/main/templates/pre-commit-autofix.yaml'
+
+variables:
+  # since we're not using merge request pipelines in this example,
+  # we will configure the pre-commit job to run on branch pipelines only.
+  # If you ARE using merge request pipelines, you can omit this section
+  PRE_COMMIT_DEDUPLICATE_MR_AND_BRANCH: false
+  PRE_COMMIT_AUTO_FIX_BRANCH_ONLY: true
+
+test:
+  script:
+    - echo "your usual tests go here" 
